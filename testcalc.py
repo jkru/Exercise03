@@ -6,13 +6,26 @@ calculator program yourself in this file.
 """
 import arithmetic
 
+test_this_calc(testcom):
+    
+    return "%s %s %s" % testcom, num1, num2
+
 def main():
     # Your code goes here
 
     while True:
-        user_input = raw_input("enter your function and numbers RPN style ")
-        token = user_input.split()
-        command = token[0]
+        #uncomment the following three lines when not testing
+        #user_input = raw_input("enter your function and numbers RPN style ")
+        #token = user_input.split()
+        #command = token[0]
+
+#temporary test code
+
+        listofcommands = ["+","-","*","/ ","square","cube","pow","mod"]
+        for com in listofcommands:
+            token = test_this_calc(listofcommands)
+
+
         if command == "q":
             break
         elif command == "+":
