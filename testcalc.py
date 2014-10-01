@@ -29,17 +29,18 @@ def main():
         elif command == "-":
             print(morearithmetic.subtract(token))
         elif command == "*":
-            print(morearithmetic.multiply(float(token[1]), float(token[2])))
+            print(morearithmetic.multiply(token))
         elif command == "/":
-            print(morearithmetic.divide(float(token[1]), float(token[2])))
+            print(morearithmetic.divide(token))
         elif command == "square":
             print(morearithmetic.square(float(token[1])))
         elif command == "cube":
             print(morearithmetic.cube(float(token[1])))
         elif command == "pow":
-            print(morearithmetic.power(float(token[1]), float(token[2])))
+            print(morearithmetic.power(token))
         elif command == "mod":
             print(morearithmetic.mod(float(token[1]), float(token[2])))
+
         else:
             print "I don't understand."
 

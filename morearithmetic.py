@@ -7,15 +7,20 @@ def add(token):
 def subtract(token):
     tot = float(token[1])
     for i in range(2,len(token)):
-        print(tot)
         tot = tot - float(token[i]) 
     return tot
 
-def multiply(num1, num2):
-    return num1 * num2
+def multiply(token):
+    product = 1
+    for i in range(1, len(token)):
+        product = product * float(token[i])
+    return product
 
-def divide(num1, num2):
-    return float(num1) / float(num2)
+def divide(token):
+    quo = float(token[1])
+    for i in range(2, len(token)):
+        quo = quo / float(token[i])
+    return quo
 
 def square(num1):
     return num1*num1
@@ -23,8 +28,11 @@ def square(num1):
 def cube(num1):
     return num1 ** 3
 
-def power(num1, num2):
-    return num1**num2
+def power(token):
+    base = float(token[1])
+    for i in range(2,len(token)):
+        base = base ** float(token[i])
+    return base
 
 def mod(num1, num2):
     return num1 % num2
