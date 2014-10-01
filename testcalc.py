@@ -22,7 +22,7 @@ def main():
 #            token = test_this_calc(listofcommands)
 
 
-        if command == "q":
+        if command == "q" or command == "quit" or command == "Q":
             break
         elif command == "+":
             print(morearithmetic.add(token))
@@ -40,10 +40,13 @@ def main():
             print(morearithmetic.power(token))
         elif command == "mod":
             print(morearithmetic.mod(float(token[1]), float(token[2])))
-
+        elif command == "root":
+            print(morearithmetic.root(token))
         else:
-            print "I don't understand."
-
+            print "I don't understand. Here are some legit commands:"
+            print "+ addition \t - subtraction \t * multiplication"
+            print "/ division \t square n*n \t cube n*n*n"
+            print "pow exponents \t mod modulo \t root nth root"
 
 
 

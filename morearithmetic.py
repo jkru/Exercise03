@@ -36,3 +36,6 @@ def power(token):
 
 def mod(num1, num2):
     return num1 % num2
+
+def root(token):
+    return float(token[1])**(1/float(token[2]))
