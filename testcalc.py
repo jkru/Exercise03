@@ -6,6 +6,7 @@ calculator program yourself in this file.
 """
 import morearithmetic
 
+
 def main():
     # Your code goes here
 
@@ -13,41 +14,24 @@ def main():
         #uncomment the following three lines when not testing
         user_input = raw_input("enter your function and numbers RPN style ")
         token = user_input.split()
+
         command = token[0]
 
-#temporary test code
-
-#        listofcommands = ["+","-","*","/ ","square","cube","pow","mod"]
-#        for com in listofcommands:
-#            token = test_this_calc(listofcommands)
-
+        operations = {'+': morearithmetic.add, '-': morearithmetic.subtract, 
+        '*': morearithmetic.multiply, '/': morearithmetic.divide, 
+        'square': morearithmetic.square, 'cube': morearithmetic.cube,
+        'pow': morearithmetic.power, 'mod': morearithmetic.mod,
+        'root': morearithmetic.root}
 
         if command == "q" or command == "quit" or command == "Q":
             break
-        elif command == "+":
-            print(morearithmetic.add(token))
-        elif command == "-":
-            print(morearithmetic.subtract(token))
-        elif command == "*":
-            print(morearithmetic.multiply(token))
-        elif command == "/":
-            print(morearithmetic.divide(token))
-        elif command == "square":
-            print(morearithmetic.square(float(token[1])))
-        elif command == "cube":
-            print(morearithmetic.cube(float(token[1])))
-        elif command == "pow":
-            print(morearithmetic.power(token))
-        elif command == "mod":
-            print(morearithmetic.mod(float(token[1]), float(token[2])))
-        elif command == "root":
-            print(morearithmetic.root(token))
+        elif command in operations:
+            print(operations[command](token))
         else:
             print "I don't understand. Here are some legit commands:"
             print "+ addition \t - subtraction \t * multiplication"
             print "/ division \t square n*n \t cube n*n*n"
             print "pow exponents \t mod modulo \t root nth root"
-
 
 
 if __name__ == '__main__':

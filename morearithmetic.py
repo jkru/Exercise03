@@ -22,11 +22,11 @@ def divide(token):
         quo = quo / float(token[i])
     return quo
 
-def square(num1):
-    return num1*num1
+def square(token):
+    return float(token[1])*float(token[1])
 
-def cube(num1):
-    return num1 ** 3
+def cube(token):
+    return float(token[1]) ** 3
 
 def power(token):
     base = float(token[1])
@@ -34,8 +34,8 @@ def power(token):
         base = base ** float(token[i])
     return base
 
-def mod(num1, num2):
-    return num1 % num2
+def mod(token):
+    return float(token[1]) % float(token[2])
 
 def root(token):
     return float(token[1])**(1/float(token[2]))
